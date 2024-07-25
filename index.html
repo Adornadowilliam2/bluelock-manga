@@ -1,49 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Egoist Manga</title>
-    <link rel="shortcut icon" href="sae.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="sae.jpeg" type="image/x-icon" />
     <style>
-        body{
-            margin-top: 10px;
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      @media (max-width: 992px) {
+        body {
+          margin-top: 10px;
         }
 
-         @media screen and (max-width: 992px) {
-            body {
-                margin-top: 10px;
-            }
-            
-            img {
-                max-width: 100%;
-                height: auto;
-            }
+        img {
+          max-width: 100%;
+          height: auto;
         }
+      }
+
+      /* Style for the scroll up button */
+      #scrollUp {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      #scrollUp:hover {
+        background-color: #0056b3;
+      }
     </style>
-</head>
-<body style="background-color: gray;">
-    <iframe style="border-radius:12px"  src="https://open.spotify.com/embed/album/2Ju0DfkzxP0XsR2IthWIEI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <center>    <img src="BLUE LOCK1.jpeg" alt="image1">
-    <img src="BLUE LOCK2.jpeg" alt="image2">
-    <img src="BLUE LOCK3.jpeg" alt="image3">
-    <img src="BLUE LOCK4.jpeg" alt="image4">
-    <img src="BLUE LOCK5.jpeg" alt="image5">
-    <img src="BLUE LOCK6.jpeg" alt="image6">
-    <img src="BLUE LOCK7.jpeg" alt="image7">
-    <img src="BLUE LOCK8.jpeg" alt="image8">
-    <img src="BLUE LOCK9.jpeg" alt="image9">
-    <img src="BLUE LOCK10.jpeg" alt="image10">
-    <img src="BLUE LOCK11.jpeg" alt="image11">
-    <img src="BLUE LOCK12.jpeg" alt="image12">
-    <img src="BLUE LOCK13.jpeg" alt="image13">
-    <img src="BLUE LOCK14.jpeg" alt="image14">
-    <img src="BLUE LOCK15.jpeg" alt="image15">
-    <img src="BLUE LOCK16.jpeg" alt="image16">
-    <img src="BLUE LOCK17.jpeg" alt="image17">
-    <img src="BLUE LOCK18.jpeg" alt="image18">
-    <img src="BLUE LOCK19.jpeg" alt="image19"> 
-</center>
-<center><a href="index.html"><h1>Homepage</h1></a></center>  
-</body>
+  </head>
+  <body style="background-color: gray">
+    <iframe
+      id="iframe"
+      style="border-radius: 12px"
+      src="https://open.spotify.com/embed/album/2Ju0DfkzxP0XsR2IthWIEI?utm_source=generator"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+    <center>
+      <img src="BLUE LOCK1.jpeg" alt="image1" />
+      <img src="BLUE LOCK2.jpeg" alt="image2" />
+      <img src="BLUE LOCK3.jpeg" alt="image3" />
+      <img src="BLUE LOCK4.jpeg" alt="image4" />
+      <img src="BLUE LOCK5.jpeg" alt="image5" />
+      <img src="BLUE LOCK6.jpeg" alt="image6" />
+      <img src="BLUE LOCK7.jpeg" alt="image7" />
+      <img src="BLUE LOCK8.jpeg" alt="image8" />
+      <img src="BLUE LOCK9.jpeg" alt="image9" />
+      <img src="BLUE LOCK10.jpeg" alt="image10" />
+      <img src="BLUE LOCK11.jpeg" alt="image11" />
+      <img src="BLUE LOCK12.jpeg" alt="image12" />
+      <img src="BLUE LOCK13.jpeg" alt="image13" />
+      <img src="BLUE LOCK14.jpeg" alt="image14" />
+      <img src="BLUE LOCK15.jpeg" alt="image15" />
+      <img src="BLUE LOCK16.jpeg" alt="image16" />
+      <img src="BLUE LOCK17.jpeg" alt="image17" />
+      <img src="BLUE LOCK18.jpeg" alt="image18" />
+      <img src="BLUE LOCK19.jpeg" alt="image19" />
+    </center>
+    <button id="scrollUp" onclick="scrollToTop()">⏏</button>
+  </body>
 </html>
+
+<script>
+  let scrollUpButton = document.getElementById("scrollUp");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      scrollUpButton.style.display = "block";
+    } else {
+      scrollUpButton.style.display = "none";
+    }
+  }
+
+  function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
